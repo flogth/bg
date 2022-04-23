@@ -1,5 +1,5 @@
-const CANVAS_WIDTH = 1920;
-const CANVAS_HEIGHT = 1080;
+let CANVAS_WIDTH;
+let CANVAS_HEIGHT;
 let drawStyle = "waves";
 
 const styles = {
@@ -105,6 +105,8 @@ function styleChanged(){
 }
 
 function init(){
+    CANVAS_WIDTH = window.screen.width || 1920;
+    CANVAS_HEIGHT = window.screen.height || 1080;
     const reloadButton = document.getElementById("reload");
     reloadButton.addEventListener("click", draw);
     const saveButton = document.getElementById("save");
