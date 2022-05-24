@@ -30,7 +30,6 @@ function draw(){
     canvas.height = CANVAS_HEIGHT;
     const ctx = canvas.getContext("2d");
     const palette = randomPalette();
-    console.log(palette);
 
     styles[drawStyle](ctx, palette);
 
@@ -40,9 +39,9 @@ function drawWaves(ctx, palette) {
     const {hue,sat,light,lightInc,satInc} = palette;
     const startHeight = randomFloat(0, CANVAS_HEIGHT / 2);
     const xInc = randomInc(16,128);
-    const yInc = randomInt(16,128);
+    const yInc = randomInt(64,256);
     const ampl = randomInt(32,128);
-    console.log({startHeight,xInc,yInc,ampl});
+    console.log({startHeight,yInc});
     const segments = 200;
     const wl = CANVAS_WIDTH / ( 5 + ( 15 * Math.random() ) );
     ctx.fillStyle = `hsl(${hue}, ${sat}%,${light}%)`;
